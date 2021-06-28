@@ -1,0 +1,31 @@
+<div class="registro">
+    <div class="container">
+        <span class="titulo">Registro de usuarios</span>
+    </div>
+</div>
+<div class="container" id="container1">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Rut</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Región</th>
+                <th scope="col">Comuna</th>
+                <th scope="col">Correo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of listaUsuarios">
+                <th>{{usuario.rut}}</th>
+                <td>{{usuario.nombres}}</td>
+                <td>{{usuario.apellidos}}</td>
+                <td class="direccion">{{usuario.direccion}}</td>
+                <td>{{usuario.region}}</td>
+                <td>{{usuario.comuna}}</td>
+                <td>{{usuario.correo}}</td>
+        </tbody>
+
+    </table>
+</div>

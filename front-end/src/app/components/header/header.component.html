@@ -1,0 +1,103 @@
+<div class="header">
+  <a href=""><img class="imagen" src="https://media.discordapp.net/attachments/843215951306424330/850936468641939496/logo_clinica.png" ></a>
+    <div class="caja2" *ngIf="validar() === false">
+      <div *ngIf="validarAdmin()===false">
+        <a href="formulario">
+          <button type="button" class="btn">Registrarse</button>
+        </a>
+      </div>
+    </div>
+
+  <a class="link" href="login" *ngIf="validar() === false">
+    <div class="caja" *ngIf="validarAdmin()===false">
+      <svg id="sesion" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+      </svg>&nbsp;
+      <span class="log">Iniciar Sesión</span>
+    </div>
+  </a>
+
+  <a class="link" href="" *ngIf="validar() === true"  (click)="cerrarSesion()">
+    <div class="caja" *ngIf="validarAdmin()===false">
+      <svg id="sesion" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+      </svg>&nbsp;
+      <span class="log" *ngIf="validar() === true">Cerrar sesión</span>
+    </div>
+  </a>
+
+  <a class="link" href="" *ngIf="validarAdmin() === true"  (click)="cerrarSesion()">
+    <div class="caja">
+      
+      <span class="log" *ngIf="validarAdmin() === true">Salir</span>
+      <svg id="sesion" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+      </svg>
+    </div>
+  </a>
+</div>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="validarAdmin() === false">
+  <div class="container-fluid">
+    <!--Barra para usuarios-->
+    <a id="inicio" *ngIf="validarAdmin() === false" class="navbar-brand" href="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+      </svg>
+    Inicio</a>    
+    <button *ngIf="validarAdmin() === false" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div  *ngIf="validarAdmin() === false" class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Médicos y especialidades
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item " href="medicos">Médicos</a></li>
+            <li><a class="dropdown-item " href="especialidades">Especialidades</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Servicios
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li *ngIf="validar() === true"><a class="dropdown-item " href="citas">Agendar hora</a></li>
+            <li *ngIf="validar() === false"><a class="dropdown-item " href="login">Agendar hora</a></li>
+            <li><a class="dropdown-item " href="urgencias">Urgencias</a></li>
+            
+          </ul>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="validar() === true" href="vista-citas">Mis citas</a>
+        </li>
+      </ul>
+    </div>   
+
+  </div>
+</nav>
+
+
+<!--Barra para admin-->
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" *ngIf="validarAdmin() === true">
+  <div class="container-fluid">
+    <a id="inicio2" *ngIf="validarAdmin() === true" class="navbar-brand" href="homeAdmin">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+      </svg>
+    Inicio</a>
+
+    <a id="admincitas" class="nav-link" *ngIf="validarAdmin() === true" href="admin_citas">Administrar citas</a>
+  </div>
+</nav>
+
+
+
+

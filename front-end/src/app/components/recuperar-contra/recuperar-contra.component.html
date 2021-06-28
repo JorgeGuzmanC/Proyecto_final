@@ -1,0 +1,36 @@
+<div class="fondoback">
+    <div class="fondo">
+        <div class="registro">
+            <span class="titulo">Recuperar Contraseña</span>
+        </div>
+        
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <ul>
+                <li>
+                    <div class="form-group">
+                        <label>Rut</label><br>
+                        <input class="form-control" placeholder="Formato Rut: XXXXXXXX-X" type="text" formControlName="rut" [ngClass]="{ 'is-invalid': submitted && f.rut.errors}" ngModel pattern="^[0-9]+[-|‐]{1}[0-9kK]{1}" minlength="10" maxlength="11">  
+                        <div *ngIf="submitted && f.rut.errors" class="invalid-feedback">
+                            <div *ngIf="f.rut.errors.required">Por favor, ingresa tu Rut</div>
+                            <div *ngIf="f.rut.errors.pattern">Por favor, ingresa un Rut valido</div>
+                        </div> 
+                    </div>
+                </li>
+                
+                <li *ngIf="preguntas != null">
+                    <label>{{preguntas}}</label><br>
+                    <input class="form-control" type="text" formControlName="respuesta1" >  
+                </li>
+
+                <li *ngIf="contrasenia != null">
+                    <label>Ingrese una nueva contraseña</label><br>
+                    <input class="form-control" type="password" formControlName="respuesta2">  
+                </li>
+
+                <li class="boton" >
+                    <button>Enviar</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>

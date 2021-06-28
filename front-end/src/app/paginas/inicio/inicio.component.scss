@@ -1,0 +1,153 @@
+#carouselExampleIndicators{
+    width: 70%;
+    margin:auto;
+    margin-bottom: 100px;
+    
+}
+
+.desc{
+
+    color:white;
+    font-weight:bold;
+}
+
+p{
+    
+    color:white;
+    font-weight:bold;
+    
+}
+
+#cajaaa{
+    background-color: rgba(27, 5, 19, 0.678);
+    border: 1px solid rgba(0, 0, 0, 0.555);
+    border-radius: 5px;
+
+}
+
+.nosotros{
+    width: 100%;
+    background: linear-gradient(to right, #00416a36, #e4e5e634);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 100px;
+}
+
+.containerN{
+    width: 70%;
+    margin: auto;
+    display: flex;
+}
+
+.imgNosotros{
+   width: 60%;
+   height: auto;
+   border: 1px solid rgba(0, 0, 0, 0.363);
+   display: inline-flex;
+}
+
+.fondo{
+    padding-top: 20px;
+    
+}
+
+.textN{
+    display: inline-flex;
+    width: 40%;
+    color: rgba(0, 0, 0, 0.712);
+    font-style: sans-serif;
+    text-align:justify;
+    margin:20px;
+}
+
+
+
+
+@media screen and (max-width:1000px){
+    .d-block{
+        height: 480px;
+    }
+    .imgNosotros{
+        width: 80%;
+        display: block;
+        height: 300px;
+        margin:auto;
+    }
+
+    
+    .containerN{
+        width: 70%;
+        margin: auto;
+        display: block;
+        
+        justify-content: center;
+    }
+    .textN{
+        display: block;
+        width: 70%;
+        color: rgba(0, 0, 0, 0.712);
+        font-style: sans-serif;
+        text-align:justify;
+        margin:auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:880px){
+    .imgNosotros{
+        width: 90%;
+        display: block;
+        height: 300px;
+        margin:auto;
+    }
+
+    
+    .containerN{
+        width: 70%;
+        margin: auto;
+        display: block;
+        
+        justify-content: center;
+    }
+    .textN{
+        display: block;
+        width: 80%;
+        color: rgba(0, 0, 0, 0.712);
+        font-style: sans-serif;
+        text-align:justify;
+        margin:auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+@media screen and (max-width:800px){
+    .d-block{
+        height: 380px;
+    }
+}
+
+@media screen and (max-width:550px){
+    .d-block{
+        height: 300px;
+    }
+    .imgNosotros{
+        height: 250px;
+        
+        
+    }
+}
+
+@media screen and (max-width:400px){
+    .d-block{
+        height: 250px;
+    }
+    .imgNosotros{
+        height: 200px;
+        
+        
+    }
+}

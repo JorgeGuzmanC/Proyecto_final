@@ -1,0 +1,101 @@
+<div class="fondoback">
+    <div class="fondo">
+        <div class="registro">
+            <span class="titulo">Agregar Cita</span>
+        </div>
+        <div class="row">
+            <form [formGroup]="formulario" (ngSubmit)="agregar()">
+                <ul>
+                    <li>
+                        <div class="form-group">
+                            <label>Rut del paciente</label>
+                            <input type="text" placeholder="Formato Rut: XXXXXXXX-X" formControlName="pacienteRut"
+                                class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pacienteRut.errors}" ngModel
+                                pattern="^[0-9]+[-|‐]{1}[0-9kK]{1}" minlength="10" maxlength="11">
+                            <div *ngIf="submitted && f.pacienteRut.errors" class="invalid-feedback">
+                                <div *ngIf="f.pacienteRut.errors.required">Por favor, ingresa un Rut</div>
+                                <div *ngIf="f.pacienteRut.errors.pattern">Por favor, ingresa un Rut valido</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label>Medicos</label><br>
+                            <select class="input" formControlName="idmedicos" [ngClass]="{ 'is-invalid': submitted && f.idmedicos.errors}">
+                                <option value="1">Dr. Eduardo Bórquez Núñez - Cardiología</option>
+                                <option value="2">Dra. Marianne Kolbach - Dermatología</option>
+                                <option value="3">María Alejandra Araya Silva - Kinesiología</option>
+                                <option value="4">Dr. César Bustos Guillén -  General</option>
+                                <option value="5">Dr. Francisco Espinoza Villegas - General</option>
+                                <option value="6">Dra. María Soledad Oltra Reyes - General</option>
+                                <option value="7">Dr. Juan Pablo Cleary Wellmann - Neurología</option>
+                                <option value="8">Marcela Ortiz Olea - Nutricionista</option>
+                                <option value="9">Dr. Cristián Bravo Palma  - Odontología</option>
+                                <option value="10">Dr. Ricardo Colvin Trucco - Oftalmología</option>
+                                <option value="11">Dra. Karen Apablaza García - Pediatría</option>
+                                <option value="12">Pía Cumsille Rivera - Psicología</option>
+                                <option value="13">Dr. Alex Carocca Miranda - Psiquiatría </option>
+                            </select>
+                            <div *ngIf="submitted && f.idmedicos.errors" class="invalid-feedback">
+                                <div *ngIf="f.idmedicos.errors.required">Por favor, selecciona un médico</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label>Motivo</label><br>
+                            <input class="input" type="text" formControlName="motivo" [ngClass]="{ 'is-invalid': submitted && f.motivo.errors}">
+                            <div *ngIf="submitted && f.motivo.errors" class="invalid-feedback">
+                                <div *ngIf="f.motivo.errors.required">Por favor, ingresa un motivo</div><br>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label>Descripcion</label><br>
+                            <textarea maxlength="150" formControlName="descripcion" class="descripcion"
+                                [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors}"></textarea>
+                            <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+                                <div *ngIf="f.descripcion.errors.required">Por favor, ingresa una descripción</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label>Estado</label><br>
+                            <select class="input" formControlName="estado" [ngClass]="{ 'is-invalid': submitted && f.estado.errors}">
+                                <option value="asignada">Asignada</option>
+                                <option value="cancelado">Cancelado</option>
+                                <option value="cerrado">Cerrado</option>
+                            </select>
+                            <div *ngIf="submitted && f.estado.errors" class="invalid-feedback">
+                                <div *ngIf="f.estado.errors.required">Por favor, selecciona un estado</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label for="calendario">Día a agendar</label><br>
+                            <input class="fecha" type="date" id="start" name="calendario" formControlName="fecha" value=" " min="2021-01-01" max="2025-12-31" [ngClass]="{ 'is-invalid': submitted && f.fecha.errors}">
+                            <div *ngIf="submitted && f.fecha.errors" class="invalid-feedback">
+                                <div *ngIf="f.fecha.errors.required">Por favor, ingresa una fecha</div>
+                            </div>
+                        </div> 
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label>Hora </label><br>
+                            <input class="hora" type="time" id="appt" name="appt" formControlName="hora" [ngClass]="{ 'is-invalid': submitted && f.hora.errors}">
+                            <div *ngIf="submitted && f.hora.errors" class="invalid-feedback">
+                                <div *ngIf="f.hora.errors.required">Por favor, ingresa una hora</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="boton">
+                        <button>Enviar</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+li{
+    list-style-type: none;
+}
+
+.titulo{
+    font-size:xx-large;
+    font-weight: bold;
+    color: black;
+}
+
+label{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+input{
+    width:100%; 
+}
+
+textarea{
+    width:100%;
+    height:90px;
+    margin-bottom: 20px;
+}
+
+
+
+.fondoback{
+    background: linear-gradient(-90deg, rgb(213, 213, 250), white);
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.fondo{
+    width: 30%;
+    height: auto;
+    margin: auto;
+    border-style: outset;
+    padding-right: 32px;
+    background-color: white;
+}
+    
+.registro{
+    background-color: rgba(15, 68, 104, 0.836);
+    padding:20px;
+    padding-left: 32px;
+    margin-right: -32px;
+    
+}
+.titulo{
+    font-size:xx-large;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.897);
+}
+
+.boton{
+    text-align: center;
+}
+
+button{
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+

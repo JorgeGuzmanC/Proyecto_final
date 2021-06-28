@@ -1,0 +1,34 @@
+
+<div class="fondoback">
+    <div class="fondo">
+        <div class="registro">
+            <span class="titulo">Agendar hora</span>
+        </div>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <ul>
+                <li>
+                    <div class="form-group">
+                        <label>Motivo</label><br>
+                        <input type="text" formControlName="motivo"  [ngClass]="{ 'is-invalid': submitted && f.motivo.errors}">    
+                        <div *ngIf="submitted && f.motivo.errors" class="invalid-feedback">
+                            <div *ngIf="f.motivo.errors.required">Por favor, ingresa un motivo</div><br>
+                        </div>
+                    </div>  
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>Descripcion</label><br>
+                        <textarea maxlength="150" formControlName="descripcion" class="descripcion" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors}"></textarea>    
+                        <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+                            <div *ngIf="f.descripcion.errors.required">Por favor, ingresa una descripción</div>
+                            
+                        </div>
+                    </div>  
+                </li>
+                <li class="boton" >
+                    <button type="submit">Enviar</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>

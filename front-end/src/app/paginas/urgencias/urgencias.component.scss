@@ -1,0 +1,161 @@
+.titulo{
+    width: 100%;
+    background-color: rgb(170, 23, 23);
+    height: 100px;
+    display: flex;
+    border-bottom: 2px solid rgb(119, 20, 20) ;    
+}
+.urgencias{
+    margin-left: 172px;
+    margin-top: 25px;
+    font-size:xx-large;
+    font-weight: bold;
+    color: white;
+}
+
+ul{
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.caja{
+    display: flex;
+    text-align: justify;
+    margin-bottom: 50px;
+    background-color: rgba(240, 49, 49, 0.931);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.281) ;
+}
+
+.cajafinal{
+    display: flex;
+    text-align: justify;
+    
+    background-color: rgba(240, 49, 49, 0.931);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.281) ;
+}
+
+.subtitulo{
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cajatext{
+    width: 40%;
+    margin: 20px;
+}
+
+.imagen{
+    width: 60%;
+    height: auto;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+@media screen and (max-width:1250px){
+    .imagen{
+        width: 45%;
+        height: auto;
+    }
+    .texto{
+        width: 55%;
+        margin: 20px;
+    }
+    .cajatext{
+        width: 60%;
+        margin: 20px;
+    }
+    ul{
+        width: 70%;
+        
+    }
+
+}
+
+@media screen and (max-width:960px){
+    .caja{
+        display: block;
+        text-align:center;
+    }
+    .cajafinal{
+        display: block;
+        text-align:center;
+    }
+
+
+    .cajatext{
+        text-align: justify;
+        width: auto;
+        margin: 20px;
+    }
+
+    
+    .imagen{
+        display: inline-block;
+        justify-content: center;
+        width: 300px;
+        height: 200px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.281) ;
+    }
+
+}
+
+@media screen and (max-width:660px){
+
+    .imagen{
+        width: 250px;
+        height: 150px;
+        border-radius: 10px;
+        
+        
+
+    }
+    ul{
+        width: 70%;
+        
+    }
+}
+
+@media screen and (max-width:500px){
+
+    .imagen{
+        width: 60%;
+        height: 110px;
+        border-radius: 10px;
+        
+        
+    }
+
+    ul{
+        width: 80%;
+        
+    }
+}
+
+body, html {
+    height: 100%;
+  }
+  
+  .parallax {
+
+    background-image: url("https://www.clinicarenaca.cl/clinica_renaca/site/artic/20190628/imag/foto_0000000120190628100203.jpg");
+  
+
+    height: 100%;
+    padding-bottom: 50px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

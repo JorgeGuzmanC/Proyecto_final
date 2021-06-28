@@ -1,0 +1,193 @@
+.titulo{
+    width: 100%;
+    background-color: rgb(71, 200, 103);
+    height: 100px;
+    display: flex;
+    border-bottom: 2px solid rgb(57, 134, 70) ;    
+}
+.medicos{
+    margin-left: 172px;
+    margin-top: 25px;
+    font-size:xx-large;
+    font-weight: bold;
+    color: white;
+}
+
+.bi{
+    margin-top: -10px;
+    margin-right: 10px;
+}
+
+
+ul{
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.caja{
+    display: flex;
+    text-align: justify;
+    margin-bottom: 50px;
+    background-color: rgba(67, 167, 92, 0.863);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.281) ;
+}
+
+.cajafinal{
+    display: flex;
+    text-align: justify;
+    
+    background-color: rgba(67, 167, 92, 0.863);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.281) ;
+}
+
+.subtitulo{
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.texto{
+    width: 50%;
+    margin: 20px;
+}
+
+.imagen{
+    width: 40%;
+    height: 330px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.384);
+}
+.tituloD{
+    width: 35%;
+    display: inline-flex;
+}
+
+.descripcion{
+    
+    width: 65%;
+    display: inline-flex;
+    
+}
+
+.contenedor{
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.247);
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width:1100px){
+    .imagen{
+        display: block;
+        height: 250px;
+        border-radius: 10px;
+        margin: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.384);
+    }
+    .tituloD{
+        width: 100%;
+        display: block;
+    }
+    .descripcion{
+        width: 100%;
+        display: block;
+    }
+
+}
+
+@media screen and (max-width:880px){
+    .caja{
+        display: block;
+        text-align:center;
+        margin-bottom: 50px;
+        background-color: rgba(67, 167, 92, 0.863);
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.281) ;
+    }
+    .cajafinal{
+        display: block;
+        text-align:center;
+        margin-bottom: 50px;
+        background-color: rgba(67, 167, 92, 0.863);
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.281) ;
+    }
+    .texto{
+        display: inline;
+        margin: 0px;
+    }
+    .imagen{
+        display: inline-block;
+        justify-content: center;
+        width: 40%;
+        height: 200px;
+    }
+    .tituloD{
+        width: 100%;
+        display: block;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .descripcion{
+        width: 100%;
+        display: block;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .contenedor{
+        margin-bottom: 0px;
+    }
+    .bi{
+        display: none;
+    }
+}
+
+@media screen and (max-width:660px){
+
+    .imagen{
+        width: 40%;
+        height: 150px;
+        border-radius: 10px;
+        margin: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.384);
+    }
+}
+
+@media screen and (max-width:500px){
+
+    .imagen{
+        width: 40%;
+        height: 110px;
+        border-radius: 10px;
+        margin: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.384);
+    }
+}
+
+body, html {
+    height: 100%;
+  }
+  
+  .parallax {
+
+    background-image: url("https://cdn.statically.io/img/cdn.hipwallpaper.com/i/23/83/0DebJg.jpg");
+  
+    padding-bottom: 50px;
+    height: 100%;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }

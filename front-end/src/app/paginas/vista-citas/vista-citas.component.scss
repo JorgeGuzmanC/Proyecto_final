@@ -1,0 +1,25 @@
+.titulo{
+    width: 100%;
+    background-color: rgb(39, 7, 27);
+    height: 100px;
+    display: flex;
+    border-bottom: 2px solid black ;    
+    margin-bottom: 50px;
+}
+
+.citas{
+    margin-left: 172px;
+    margin-top: 25px;
+    font-size:xx-large;
+    font-weight: bold;
+    color: white;
+}
+
+.container{
+    margin-bottom: 50px;
+}
+
+.descripcion{
+    max-width: 400px;
+    word-wrap:break-word;
+}

@@ -1,0 +1,39 @@
+<div class="fondoback">
+    <div class="fondo">
+        <div class="registro">
+            <span class="titulo">Iniciar sesión</span>
+        </div>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <ul>
+                <li>
+                    <div class="form-group">
+                        <label>Rut</label><br>
+                        <input class="form-control" placeholder="Formato Rut: XXXXXXXX-X" type="text" formControlName="rut" [ngClass]="{ 'is-invalid': submitted && f.rut.errors}" ngModel pattern="^[0-9]+[-|‐]{1}[0-9kK]{1}" minlength="9" maxlength="10">  
+                        <div *ngIf="submitted && f.rut.errors" class="invalid-feedback">
+                            <div *ngIf="f.rut.errors.required">Por favor, ingresa tu Rut</div>
+                            <div *ngIf="f.rut.errors.pattern">Por favor, ingresa un Rut valido</div>
+                        </div> 
+                    </div>
+                </li>
+                <li>
+                    <label>Contraseña</label><br>
+                    <input class="input" type="password" formControlName="contra" [ngClass]="{ 'is-invalid': submitted && f.contra.errors}">   
+                    <div *ngIf="submitted && f.contra.errors" class="invalid-feedback">
+                        <div *ngIf="f.contra.errors.required">Por favor ingrese una contraseña</div>
+                        
+                    </div> 
+                </li>
+               <div class="aa"> <br><ngx-recaptcha2  formControlName="captcha" #captchaElem [siteKey]="siteKey" (success)="handleSuccess($event)"> </ngx-recaptcha2></div>
+                <li class="boton" >
+                    <button>Enviar</button>
+                </li>
+                <li>
+                    <div class="olvido">
+                        <a href="recuperarContra">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </li>
+            </ul>
+           
+        </form>
+    </div>
+</div>

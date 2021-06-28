@@ -1,0 +1,152 @@
+<div class="fondoback">
+    <div class="fondo">
+        <div class="registro">
+            <span class="titulo">Registro</span>
+        </div>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <ul>
+                <li>
+                    <div class="form-group">
+                        <label>Nombres</label><br>
+                        <input type="text" formControlName="nombre" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors}" maxlength="40">    
+                        <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                            <div *ngIf="f.nombre.errors.required">Por favor, ingresa tus Nombres</div>
+                            
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>Apellidos</label><br>
+                        <input type="text" formControlName="apellidos" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.apellidos.errors}" maxlength="40"> 
+                        <div *ngIf="submitted && f.apellidos.errors" class="invalid-feedback">
+                            <div *ngIf="f.apellidos.errors.required">Por favor, ingresa tus Apellidos</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>Rut</label><br>
+                        <input type="text" placeholder="Formato Rut: XXXXXXXX-X" formControlName="rut" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rut.errors}" ngModel pattern="^[0-9]+[-|‐]{1}[0-9kK]{1}" minlength="9" maxlength="10">   
+                        <div *ngIf="submitted && f.rut.errors" class="invalid-feedback">
+                            <div *ngIf="f.rut.errors.required">Por favor, ingresa tu Rut</div>
+                            <div *ngIf="f.rut.errors.pattern">Por favor, ingresa un Rut valido</div>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="form-group">
+                        <label>Dirección</label><br>
+                        <input type="text" formControlName="direccion" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.direccion.errors}"> 
+                        <div *ngIf="submitted && f.direccion.errors" class="invalid-feedback">
+                            <div *ngIf="f.direccion.errors.required">Por favor, ingresa tu dirección</div>
+                        </div>
+                    </div>
+                </li>
+                
+                
+                <li>
+                    <div class="form-group">
+                        <label>Región</label><br>
+                        <select formControlName="regionSeleccionada"  (ngModelChange)="onChange($event)" [ngClass]="{ 'is-invalid': submitted && f.regionSeleccionada.errors}">
+                            
+                            <option [value]="item.region" *ngFor="let item of regiones">{{item.region}}</option>
+                            
+                        </select>
+                        
+                        <div *ngIf="submitted && f.regionSeleccionada.errors" class="invalid-feedback">
+                            <div *ngIf="f.regionSeleccionada.errors.required">Por favor, selecciona una Región</div>
+                        </div> 
+                                
+                    </div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>Comunas</label><br>
+                        <select formControlName="ciudadSeleccionada" (ngModelChange)="onChangeC($event)" [ngClass]="{ 'is-invalid': submitted && f.ciudadSeleccionada.errors}">
+                            
+                            <option [value]="item" *ngFor="let item of ciudades">{{item}}</option>
+                        </select>
+                        <div *ngIf="submitted && f.ciudadSeleccionada.errors" class="invalid-feedback">
+                            <div *ngIf="f.ciudadSeleccionada.errors.required">Por favor, selecciona una Comuna</div>
+                        </div>  
+                    </div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>Correo electrónico</label><br>
+                        <input type="email" formControlName="correo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.correo.errors}">
+                        
+                        <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+                            <div *ngIf="f.correo.errors.required">Por favor, ingresa un correo electrónico</div>
+                            <div *ngIf="f.correo.errors.email">Por favor, ingresa un corrreo electrónico Valido</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>Contraseña</label><br>
+                        <input type="password" formControlName="contra" minlength="4" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.contra.errors}">
+                        <div *ngIf="submitted && f.contra.errors" class="invalid-feedback">
+                            <div *ngIf="f.contra.errors.required">Por favor ingrese una contraseña</div>
+                            <div *ngIf="f.contra.errors.minlength">La contraseña debe contener a lo menos 4 caracteres</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>Confirmar contraseña</label><br>
+                        <input type="password" formControlName="ccontra" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ccontra.errors}">
+                        
+                        <div *ngIf="submitted && f.ccontra.errors" class="invalid-feedback">
+                            
+                            <div *ngIf="f.ccontra.errors.incorrect">Las contraseñas no coinciden, intente nuevamente</div>
+                        </div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="form-group">
+                        <label> Seleccione una pregunta de seguridad</label><br>
+                        <select select formControlName="pregunta" [ngClass]="{ 'is-invalid': submitted && f.pregunta.errors}">
+                            <option value="¿Nombre de tu mejor amigo?">¿Nombre de tu mejor amigo?</option>
+                            <option value="¿Nombre de tu primer novio/a?">¿Nombre de tu primer novio/a?</option>
+                            <option value="¿Como se llamó tu primera mascota?">¿Como se llamó tu primera mascota?</option>
+                            <option value="¿Comida favorita?">¿Comida favorita?</option>
+                            <option value="¿Película favorita?">¿Película favorita?</option>
+                        </select> 
+                        <div *ngIf="submitted && f.pregunta.errors" class="invalid-feedback">
+                            <div *ngIf="f.pregunta.errors.required">Por favor, selecciona una pregunta de seguridad</div>
+                        </div> 
+                    </div>
+                </li>
+                <li>
+                    <div class="form-group" >
+                        <label>Respuesta</label><br>
+                        <input type="password" formControlName="respuesta" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.respuesta.errors}"> 
+                        <div *ngIf="submitted && f.respuesta.errors" class="invalid-feedback">
+                            <div *ngIf="f.respuesta.errors.required">Por favor, ingresa una respuesta</div>
+                        </div>
+                    </div>
+                </li>
+                
+                
+                <div class="captcha">
+                    <ngx-recaptcha2 formControlName="captcha" #captchaElem [siteKey]="siteKey" (success)="handleSuccess($event)"> </ngx-recaptcha2>        
+                </div>
+                
+                <li class="contBut">
+                    <button class="boton">Enviar</button> 
+       
+                </li>
+            </ul>
+            
+        </form>
+    </div>
+</div>
+
+
+
+
+

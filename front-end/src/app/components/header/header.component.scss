@@ -1,0 +1,142 @@
+.header{
+    width: 100%;
+    height: auto;
+}
+
+
+.imagen{
+    width: 20%;
+    min-width: 200px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    display:inline-block;
+}
+
+#inicio{
+    margin-left: 33px;
+}
+
+.nav-item{
+    margin-left: 35px;
+}
+
+.dropdown-item:hover{
+    color: #04a393;
+    background-color: rgb(207, 205, 205);
+}
+
+.caja{
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.caja2{
+    float: right;
+    margin-top: 16px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.btn{
+    background-color: rgb(230, 227, 227);
+    border: 1px solid black;
+    color: black;
+}
+
+.btn:hover{
+    background-color:#0eb1a0;
+    color: white;
+}
+
+.btn:active {
+
+    background-color:#086b61;
+    color: white;
+}
+
+.log{
+    margin-right: 10px;
+
+}
+
+.link{
+   
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+
+.bi{
+    margin-top: -4px;
+}
+
+#admincitas{
+    
+    color:rgba(255, 255, 255, 0.925);
+}
+
+#admincitas:hover{
+    color:rgba(255, 255, 255, 0.596);
+}
+
+#inicio2{
+    margin-left: 33px;
+    color:rgba(255, 255, 255, 0.925);
+}
+
+#inicio2:hover{
+    color:rgba(255, 255, 255, 0.596);
+}
+
+@media screen and (max-width:550px){
+    .imagen{
+        width: 100px;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        display:inline-block;
+    }
+
+    #inicio{
+        margin-left: 10px;
+    }
+
+    .nav-item{
+        margin-left: 10px;
+    }
+    
+    .log{
+        display: none;
+    }
+
+    .btn{
+        font-size: small;
+    }
+
+    #sesion{
+        
+        margin-top: -2px;
+        margin-bottom: 0px;
+
+    }
+
+    .caja2{
+        margin: 0px;
+        margin-top:20px;
+        margin-right: 5px;
+    }
+
+}
+
+@media screen and (max-width:379px){
+    .caja{
+        display: none;
+    }
+
+    .btn{
+        display: none;
+    }
+}
